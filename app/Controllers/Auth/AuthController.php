@@ -27,8 +27,7 @@ class AuthController extends Controller
      *
      * @var array
      */
-    protected $helpers = ['array', 'form', 'url', 'date'];
-
+    protected $helpers = ['date', 'form', 'menu_helper', 'uri'];
     /**
      * Constructor.
      */
@@ -36,7 +35,6 @@ class AuthController extends Controller
     {
         // Do Not Edit This Line
         parent::initController($request, $response, $logger);
-
         //--------------------------------------------------------------------
         // Preload any models, libraries, etc, here.
         //--------------------------------------------------------------------
@@ -44,5 +42,6 @@ class AuthController extends Controller
         // $this->session = \Config\Services::session();
         $this->session = \Config\Services::session();
         $this->db_check = \Config\Database::connect();
+        $this->request = \Config\Services::request();
     }
 }
