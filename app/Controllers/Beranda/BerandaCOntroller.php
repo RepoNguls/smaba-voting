@@ -15,6 +15,8 @@ namespace App\Controllers\Beranda;
  * @package CodeIgniter
  */
 
+use App\Models\UserModel;
+use App\Models\KegiatanModel;
 use CodeIgniter\Controller;
 
 class BerandaController extends Controller
@@ -34,8 +36,18 @@ class BerandaController extends Controller
      */
     public function initController(\CodeIgniter\HTTP\RequestInterface $request, \CodeIgniter\HTTP\ResponseInterface $response, \Psr\Log\LoggerInterface $logger)
     {
+        $this->UserModel =  new UserModel();
+        $this->KegiatanModel =  new KegiatanModel();
         // Do Not Edit This Line
         parent::initController($request, $response, $logger);
+
+        $session = \Config\Services::session();
+        $this->session = \Config\Services::session();
+
+        $this->kegiatan = $this->KegiatanModel->getAllKegiatan();
+        $this->user_id = $session->get('id_peserta');
+
+        $this->user_name = $this->UserModel->get_user($this->user_id); // Get Login User ID
 
         //--------------------------------------------------------------------
         // Preload any models, libraries, etc, here.

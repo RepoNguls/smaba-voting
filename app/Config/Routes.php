@@ -33,7 +33,15 @@ $routes->get('login', 'Auth\Login::index');
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
+$routes->get('/login', 'Auth\Login::index');
+$routes->post('/login', 'Auth\Login::login');
+$routes->get('/logout', 'Auth\Login::logout');
 
+
+$routes->group('user', ['filter' => 'auth_user'], function ($routes) {
+	$routes->get('/', 'Beranda\Beranda::index');
+	$routes->post('simpan', 'Beranda\Beranda::simpan');
+});
 /*
  * --------------------------------------------------------------------
  * Additional Routing

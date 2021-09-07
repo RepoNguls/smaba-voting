@@ -8,7 +8,12 @@ class Login extends AuthController
 {
     public function index()
     {
-        return view("auth\login");
+        $session = \Config\Services::session();
+        if ($session->has('is_siswa_login')) {
+            return redirect()->to(base_url('/user'));
+        } else {
+            return view("auth\login");
+        }
     }
 
     public function login()
@@ -44,5 +49,11 @@ class Login extends AuthController
             $this->session->setFlashdata('login_error', 'User name atau password salah.');
             return redirect()->to(base_url('/login'));
         }
+    }
+
+    public function logout()
+    {
+        $this->session->destroy();
+        return redirect()->to(base_url('/'));
     }
 }

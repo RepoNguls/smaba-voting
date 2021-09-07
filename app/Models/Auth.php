@@ -40,4 +40,13 @@ class Auth extends Model
 			}
 		}
 	}
+
+
+	public function save_waktu($data, $id)
+	{
+		$builder = $this->db->table('data_peserta');
+		$builder->where('id_peserta', $id);
+		$builder->update($data);
+		return true;
+	}
 }

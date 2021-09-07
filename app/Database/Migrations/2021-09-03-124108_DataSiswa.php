@@ -14,7 +14,9 @@ class DataSiswa extends Migration
 			'nama'  => ['type' => 'varchar', 'constraint' => 70,],
 			'kelas'  => ['type' => 'varchar', 'constraint' => 70,],
 			'password'  => ['type' => 'varchar', 'constraint' => 255,],
+			'kegiatan'  => ['type' => 'varchar', 'constraint' => 70,],
 			'last_login'  => ['type' => 'varchar', 'constraint' => 70,],
+			'is_active'  => ['type' => 'int', 'constraint' => 5,],
 			'updated_at' => [
 				'type'           => 'datetime',
 			],
