@@ -30,12 +30,12 @@ class Login extends AuthController
         if ($result) {
             if ($result['is_active'] == 0) {
                 $this->session->setFlashdata('login_warning', 'User tidak aktif.');
-                return redirect()->to(base_url('/'));
+                return redirect()->to(base_url('/user'));
             } else {
                 $admin_data = array(
                     'id_peserta' => $result['id_peserta'],
                     'username' => $result['username'],
-                    'is_siswa_login' => TRUE, //kedepan ini di ganti sesuai kebutuhan
+                    'is_siswa_login' => true, //kedepan ini di ganti sesuai kebutuhan
                     'is_login' => true
                 );
                 $data = array(

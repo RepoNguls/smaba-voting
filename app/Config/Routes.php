@@ -37,6 +37,8 @@ $routes->get('/login', 'Auth\Login::index');
 $routes->post('/login', 'Auth\Login::login');
 $routes->get('/logout', 'Auth\Login::logout');
 
+$routes->get('/dashboard', 'Dashboard::index');
+
 
 $routes->group('user', ['filter' => 'auth_user'], function ($routes) {
 	$routes->get('/', 'Beranda\Beranda::index');

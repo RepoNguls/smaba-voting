@@ -1,117 +1,89 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-
+    <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>SMABA</title>
-
-    <!-- Custom fonts for this template-->
-    <link rel="stylesheet" type="text/css" href="<?= base_url('dep/css/all.min.css'); ?>">
-
-
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-
-    <!-- Custom styles for this template-->
-    <link href="<?= base_url('dep/css/sb-admin-2.min.css'); ?>" rel="stylesheet">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--favicon-->
+    <link rel="icon" href="assets/images/favicon-32x32.png" type="image/png" />
+    <!--plugins-->
+    <link href="<?php echo base_url(); ?>/assets/plugins/vectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet" />
+    <link href="<?php echo base_url(); ?>/assets/plugins/simplebar/css/simplebar.css" rel="stylesheet" />
+    <link href="<?php echo base_url(); ?>/assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet" />
+    <link href="<?php echo base_url(); ?>/assets/plugins/metismenu/css/metisMenu.min.css" rel="stylesheet" />
+    <!-- loader-->
+    <link href="<?php echo base_url(); ?>/assets/css/pace.min.css" rel="stylesheet" />
+    <script src="<?php echo base_url(); ?>/assets/js/pace.min.js"></script>
+    <!-- Bootstrap CSS -->
+    <link href="<?php echo base_url(); ?>/assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>/assets/css/app.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>/assets/css/icons.css" rel="stylesheet">
+    <!-- Theme Style CSS -->
+    <link rel="<?php echo base_url(); ?>/stylesheet" href="assets/css/dark-theme.css" />
+    <link rel="<?php echo base_url(); ?>/stylesheet" href="assets/css/semi-dark.css" />
+    <link rel="<?php echo base_url(); ?>/stylesheet" href="assets/css/header-colors.css" />
+    <title>Rocker - Bootstrap 5 Admin Dashboard Template</title>
 </head>
 
-<body id="page-top">
-
-    <!-- Page Wrapper -->
-    <div id="wrapper">
-
-        <!-- Sidebar -->
+<body>
+    <!--wrapper-->
+    <div class="wrapper">
+        <!--sidebar wrapper -->
         <?php include('sidebar.php'); ?>
-        <!-- End of Sidebar -->
-
-        <!-- Content Wrapper -->
-        <div id="content-wrapper" class="d-flex flex-column">
-
-            <!-- Main Content -->
-            <div id="content">
-
-                <!-- Topbar -->
-                <?php include('navbar.php'); ?>
-                <!-- End of Topbar -->
-
-                <!-- Begin Page Content 
-                <div class="container-fluid">
-
-                   
-                    <h1 class="h3 mb-4 text-gray-800">Blank Page</h1>
-
-                </div> -->
+        <!--end sidebar wrapper -->
+        <!--start header -->
+        <?php include('navbar.php'); ?>
+        <!--end header -->
+        <!--start page wrapper -->
+        <div class="page-wrapper">
+            <div class="page-content">
                 <?= view($view); ?>
-
-                <!-- /.container-fluid -->
-
             </div>
-            <!-- End of Main Content -->
-
-            <!-- Footer -->
-            <footer class="sticky-footer bg-white">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Smaba 2021</span>
-                    </div>
-                </div>
-            </footer>
-            <!-- End of Footer -->
-
         </div>
-        <!-- End of Content Wrapper -->
-
+        <!--end page wrapper -->
+        <!--start overlay-->
+        <div class="overlay toggle-icon"></div>
+        <!--end overlay-->
+        <!--Start Back To Top Button--> <a href="javaScript:;" class="back-to-top"><i class='bx bxs-up-arrow-alt'></i></a>
+        <!--End Back To Top Button-->
+        <footer class="page-footer">
+            <p class="mb-0">Copyright Â© 2021. All right reserved.</p>
+        </footer>
     </div>
-    <!-- End of Page Wrapper -->
-
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-        <i class="fas fa-angle-up"></i>
-    </a>
-
-    <!-- Logout Modal-->
-    <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
+    <!--end wrapper-->
+    <!--start Modal Logout-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="display: none;">
+        <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Logout?</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
+                    <h5 class="modal-title" id="exampleModalLabel">Logout</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">Pilih "Logout" di bawah ini jika Anda siap untuk mengakhiri sesi Anda saat ini .</div>
                 <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="<?php echo base_url(); ?>/logout">Logout</a>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                    <a href="<?php echo base_url(); ?>/logout" class="btn btn-danger">Logout</a>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Bootstrap core JavaScript
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    -->
-    <!-- Core plugin JavaScript
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>-->
-
-
-    <!-- Bootstrap core JavaScript-->
-    <script src="<?php echo base_url(); ?>/dep/vendor/jquery/jquery.min.js"></script>
-    <script src="<?php echo base_url(); ?>/dep/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Core plugin JavaScript-->
-    <script src="<?php echo base_url(); ?>/dep/vendor/jquery-easing/jquery.easing.min.js"></script>
-    <!-- Custom scripts for all pages-->
-    <script src="<?php echo base_url(); ?>/dep/js/sb-admin-2.min.js"></script>
-
+    <!--end Modal Logout-->
+    <!-- Bootstrap JS -->
+    <script src="<?php echo base_url(); ?>/assets/js/bootstrap.bundle.min.js"></script>
+    <!--plugins-->
+    <script src="<?php echo base_url(); ?>/assets/js/jquery.min.js"></script>
+    <script src="<?php echo base_url(); ?>/assets/plugins/simplebar/js/simplebar.min.js"></script>
+    <script src="<?php echo base_url(); ?>/assets/plugins/metismenu/js/metisMenu.min.js"></script>
+    <script src="<?php echo base_url(); ?>/assets/plugins/perfect-scrollbar/js/perfect-scrollbar.js"></script>
+    <script src="<?php echo base_url(); ?>/assets/plugins/vectormap/jquery-jvectormap-2.0.2.min.js"></script>
+    <script src="<?php echo base_url(); ?>/assets/plugins/vectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="<?php echo base_url(); ?>/assets/plugins/chartjs/js/Chart.min.js"></script>
+    <script src="<?php echo base_url(); ?>/assets/plugins/chartjs/js/Chart.extension.js"></script>
+    <script src="<?php echo base_url(); ?>/assets/js/index.js"></script>
+    <!--app JS-->
+    <script src="<?php echo base_url(); ?>/assets/js/app.js"></script>
 </body>
 
 </html>

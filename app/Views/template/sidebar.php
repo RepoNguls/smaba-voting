@@ -1,57 +1,49 @@
-<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-
-    <!-- Sidebar - Brand -->
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
-        <div class="sidebar-brand-icon rotate-n-15">
-            <i class="fas fa-laugh-wink"></i>
+<div class="sidebar-wrapper" data-simplebar="true">
+    <div class="sidebar-header">
+        <div>
+            <img src="assets/images/logo-icon.png" class="logo-icon" alt="logo icon">
         </div>
-        <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
-    </a>
-
-    <!-- Divider -->
-    <hr class="sidebar-divider my-0">
-
-    <!-- Nav Item - Dashboard -->
-    <li class="nav-item <?php
-                        if ($URL == "beranda") {
-                            echo 'active';
-                        };
-                        ?>">
-        <a class="nav-link" href="#">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>Beranda</span></a>
-    </li>
-
-    <!-- Divider -->
-    <hr class="sidebar-divider">
-
-    <!-- Nav Item - Pages Collapse Menu -->
-    <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-            <i class="fas fa-fw fa-cog"></i>
-            <span>Kegiatan</span>
-        </a>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
+        <div>
+            <h4 class="logo-text">Rocker</h4>
+        </div>
+        <div class="toggle-icon ms-auto"><i class='bx bx-arrow-to-left'></i>
+        </div>
+    </div>
+    <!--navigation-->
+    <ul class="metismenu" id="menu">
+        <li>
+            <a href="<?php echo base_url(); ?>/dashboard">
+                <div class="parent-icon"><i class='bx bx-home-circle'></i>
+                </div>
+                <div class="menu-title">Dashboard</div>
+            </a>
+        </li>
+        <li>
+            <a href="javascript:;" class="has-arrow">
+                <div class="parent-icon"><i class="bx bx-category"></i>
+                </div>
+                <div class="menu-title">Application</div>
+            </a>
+            <ul>
                 <?php
-                $colors = $kegiatan;
-
-                foreach ($colors as $value) { ?>
-                    <a class="collapse-item" href="<?= $value['link']; ?>"><?= $value['kegiatan']; ?></a>
+                $list = $kegiatan;
+                foreach ($list as $value) { ?>
+                    <li> <a href="<?= $value['link']; ?>"><i class="bx bx-right-arrow-alt"></i><?= $value['kegiatan']; ?></a>
+                    </li>
                 <?php
                 }
                 ?>
-            </div>
-        </div>
-    </li>
 
-
-    <!-- Divider -->
-    <hr class="sidebar-divider d-none d-md-block">
-
-    <!-- Sidebar Toggler (Sidebar) -->
-    <div class="text-center d-none d-md-inline">
-        <button class="rounded-circle border-0" id="sidebarToggle"></button>
-    </div>
-
-</ul>
+            </ul>
+        </li>
+        <li class="menu-label">UI Elements</li>
+        <li>
+            <a href="widgets.html">
+                <div class="parent-icon"><i class='bx bx-cookie'></i>
+                </div>
+                <div class="menu-title">Widgets</div>
+            </a>
+        </li>
+    </ul>
+    <!--end navigation-->
+</div>

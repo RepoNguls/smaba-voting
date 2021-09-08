@@ -25,13 +25,11 @@ class Auth extends Model
 
 	public function login_siswa($data)
 	{
-		$builder = $this->db->table('data_peserta');
-		$builder->where('username', $data['username']);
-
-		$query = $builder->get();
-		if ($builder->countAllResults() == 0) {
+		$this->where('username', $data['username']);
+		if ($this->countAllResults() == 0) {
 			return false;
 		} else {
+			$query = $this->get();
 			//Bandingkan Input Password dengan yang ada di database
 			$result = $query->getRowArray();
 			$validPassword = $data['password'] == $result['password'];
@@ -40,7 +38,6 @@ class Auth extends Model
 			}
 		}
 	}
-
 
 	public function save_waktu($data, $id)
 	{
