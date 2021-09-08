@@ -45,7 +45,7 @@ class BerandaController extends Controller
         $this->session = \Config\Services::session();
 
         $this->kegiatan = $this->KegiatanModel->getAllKegiatan();
-        $this->user_id = $session->get('id_peserta');
+        $this->user_id = $session->get('username');
 
         $this->user_name = $this->UserModel->get_user($this->user_id); // Get Login User ID
 

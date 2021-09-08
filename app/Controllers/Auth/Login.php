@@ -33,7 +33,6 @@ class Login extends AuthController
                 return redirect()->to(base_url('/user'));
             } else {
                 $admin_data = array(
-                    'id_peserta' => $result['id_peserta'],
                     'username' => $result['username'],
                     'is_siswa_login' => true, //kedepan ini di ganti sesuai kebutuhan
                     'is_login' => true
@@ -41,7 +40,7 @@ class Login extends AuthController
                 $data = array(
                     'last_login' => $waktu_login,
                 );
-                $model->save_waktu($data, $result['id_peserta']);
+                $model->save_waktu($data, $result['username']);
                 $this->session->set($admin_data);
                 return redirect()->to(base_url('user'));
             }

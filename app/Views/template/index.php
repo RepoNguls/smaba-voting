@@ -24,6 +24,7 @@
     <link rel="<?php echo base_url(); ?>/stylesheet" href="assets/css/dark-theme.css" />
     <link rel="<?php echo base_url(); ?>/stylesheet" href="assets/css/semi-dark.css" />
     <link rel="<?php echo base_url(); ?>/stylesheet" href="assets/css/header-colors.css" />
+    <link rel="<?php echo base_url(); ?>/stylesheet" href="assets/css/custom.css" />
     <title>Rocker - Bootstrap 5 Admin Dashboard Template</title>
 </head>
 

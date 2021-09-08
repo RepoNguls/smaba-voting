@@ -9,7 +9,7 @@ class DataSiswa extends Migration
 	public function up()
 	{
 		$this->forge->addField([
-			'id_peserta'  => ['type' => 'int', 'constraint' => 5,],
+			'id_peserta'  => ['type' => 'int', 'constraint' => 5, 'auto_increment' => TRUE],
 			'username'  => ['type' => 'varchar', 'constraint' => 70,],
 			'nama'  => ['type' => 'varchar', 'constraint' => 70,],
 			'kelas'  => ['type' => 'varchar', 'constraint' => 70,],
@@ -24,7 +24,7 @@ class DataSiswa extends Migration
 				'type'           => 'datetime',
 			]
 		]);
-		$this->forge->addKey('id_peserta', TRUE);
+		$this->forge->addKey('username', TRUE);
 		$this->forge->createTable('data_peserta');
 	}
 

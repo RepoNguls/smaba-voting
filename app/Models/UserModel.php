@@ -8,16 +8,18 @@ class UserModel extends Model
 {
 	protected $DBGroup              = 'default';
 	protected $table                = 'data_peserta';
-	protected $primaryKey           = 'id';
+	protected $primaryKey           = 'username';
 	protected $useAutoIncrement     = true;
 	protected $insertID             = 0;
 	protected $returnType           = 'array';
 	protected $useSoftDeletes       = false;
 	protected $protectFields        = true;
-	protected $allowedFields        = [];
+	protected $allowedFields        = [
+		'kegiatan',
+	];
 
 	// Dates
-	protected $useTimestamps        = false;
+	protected $useTimestamps        = true;
 	protected $dateFormat           = 'datetime';
 	protected $createdField         = 'created_at';
 	protected $updatedField         = 'updated_at';
@@ -42,23 +44,11 @@ class UserModel extends Model
 
 	public function get_user($id_peserta)
 	{
-		return $this->where(['id_peserta' => $id_peserta])->first();
+		return $this->where(['username' => $id_peserta])->first();
 	}
-	public function save_profile($data, $id)
+	public function update_pemilih($data, $id)
 	{
-		$this->where('id_peserta', $id);
+		$this->where('username', $id);
 		return $this->update($id, $data);
-	}
-	public function import_siswa($data)
-	{
-		$this->insertBatch($data);
-		return true;
-	}
-	public function save_absen($data, $no_pendaftaran)
-	{
-		$this->where('id_peserta', $no_pendaftaran);
-		//  $this->set($data);
-		$this->update($no_pendaftaran, $data);
-		echo 1;
 	}
 }

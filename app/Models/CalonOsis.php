@@ -4,10 +4,10 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class KegiatanModel extends Model
+class CalonOsis extends Model
 {
 	protected $DBGroup              = 'default';
-	protected $table                = 'kegiatan';
+	protected $table                = 'kandidat_osis';
 	protected $primaryKey           = 'id';
 	protected $useAutoIncrement     = true;
 	protected $insertID             = 0;
@@ -40,27 +40,13 @@ class KegiatanModel extends Model
 	protected $beforeDelete         = [];
 	protected $afterDelete          = [];
 
-
-	public function getAllKegiatan()
+	public function getAllKandidat()
 	{
-		return $this->where('is_active', 1)->findAll();
+		return $this->findAll();
 	}
 
-	public function checkDataKegiatan($namaKegiatan)
+	public function getByID($id)
 	{
-		$this->where('kegiatan', $namaKegiatan);
-		$query = $this->get();
-		$result = $query->getRowArray();
-
-		if (!$result['is_active'] == 1) {
-			return 0;
-		}
-		return 1;
-	}
-
-
-	public function checkDataKegiatanActive($namaKegiatan)
-	{
-		return $this->where('kegiatan', $namaKegiatan)->first();
+		return $this->where('nomor_id', $id)->findAll();
 	}
 }

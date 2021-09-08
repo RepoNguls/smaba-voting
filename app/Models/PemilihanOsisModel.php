@@ -4,20 +4,25 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class KegiatanModel extends Model
+class PemilihanOsisModel extends Model
 {
 	protected $DBGroup              = 'default';
-	protected $table                = 'kegiatan';
-	protected $primaryKey           = 'id';
+	protected $table                = 'pemilihan_osis';
+	protected $primaryKey           = 'username';
 	protected $useAutoIncrement     = true;
 	protected $insertID             = 0;
 	protected $returnType           = 'array';
-	protected $useSoftDeletes       = false;
+	protected $useSoftDeletes       = true;
 	protected $protectFields        = true;
-	protected $allowedFields        = [];
+	protected $allowedFields        = [
+		'id',
+		'username',
+		'kelas',
+		'pilihan_id',
+	];
 
 	// Dates
-	protected $useTimestamps        = false;
+	protected $useTimestamps        = true;
 	protected $dateFormat           = 'datetime';
 	protected $createdField         = 'created_at';
 	protected $updatedField         = 'updated_at';
@@ -40,27 +45,19 @@ class KegiatanModel extends Model
 	protected $beforeDelete         = [];
 	protected $afterDelete          = [];
 
-
-	public function getAllKegiatan()
+	public function save_pilih($data, $user)
 	{
-		return $this->where('is_active', 1)->findAll();
-	}
-
-	public function checkDataKegiatan($namaKegiatan)
-	{
-		$this->where('kegiatan', $namaKegiatan);
-		$query = $this->get();
-		$result = $query->getRowArray();
-
-		if (!$result['is_active'] == 1) {
-			return 0;
+		$this->where('username', $user);
+		if ($this->countAllResults() == 0) {
+			return $this->insert($data);
+		} else {
+			return $this->update($user, $data);
 		}
-		return 1;
 	}
 
 
-	public function checkDataKegiatanActive($namaKegiatan)
+	public function getPilihan($id)
 	{
-		return $this->where('kegiatan', $namaKegiatan)->first();
+		return $this->where(['username' => $id])->first();
 	}
 }

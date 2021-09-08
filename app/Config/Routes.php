@@ -44,6 +44,12 @@ $routes->group('user', ['filter' => 'auth_user'], function ($routes) {
 	$routes->get('/', 'Beranda\Beranda::index');
 	$routes->post('simpan', 'Beranda\Beranda::simpan');
 });
+
+$routes->group('kegiatan', ['filter' => 'auth_user'], function ($routes) {
+	$routes->get('pemilihan-osis', 'Kegiatan\PemilihanOsis::index');
+	$routes->post('pemilihan-osis/pilih', 'Kegiatan\PemilihanOsis::pilih');
+	$routes->post('pemilihan-osis/ganti', 'Kegiatan\PemilihanOsis::ganti');
+});
 /*
  * --------------------------------------------------------------------
  * Additional Routing

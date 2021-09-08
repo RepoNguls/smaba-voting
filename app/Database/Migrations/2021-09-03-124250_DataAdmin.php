@@ -9,7 +9,7 @@ class DataAdmin extends Migration
 	public function up()
 	{
 		$this->forge->addField([
-			'id_admin'  => ['type' => 'int', 'constraint' => 5,],
+			'id_admin'  => ['type' => 'int', 'constraint' => 5, 'auto_increment' => TRUE],
 			'username'  => ['type' => 'varchar', 'constraint' => 70,],
 			'password'  => ['type' => 'varchar', 'constraint' => 70,]
 		]);
