@@ -12,7 +12,7 @@ class Login extends AuthController
         if ($session->has('is_siswa_login')) {
             return redirect()->to(base_url('/user'));
         } else {
-            return view("auth\login");
+            return view('auth\login');
         }
     }
 
@@ -28,7 +28,7 @@ class Login extends AuthController
         );
         $result = $model->login_siswa($data);
         if ($result) {
-            if ($result['is_active'] == 0) {
+            if ($result["is_active"] == 0) {
                 $this->session->setFlashdata('login_warning', 'User tidak aktif.');
                 return redirect()->to(base_url('/user'));
             } else {

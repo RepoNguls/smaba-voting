@@ -75,7 +75,7 @@ if ($timestampAkhir < now()) {
                                 <div class="p-4 border radius-15">
                                     <h6 class="mb-0 text-uppercase">Paslon Nomor <?= $value['nomor_id']; ?></h6>
                                     <hr>
-                                    <img src="<?php echo base_url(); ?>/assets/images/avatars/avatar-1.png" width="110" height="110" class="shadow" alt="">
+                                    <img src="<?php echo base_url(); ?>/assets/images/calonosis/<?= $value['foto_id']; ?>" width="110" height="110" class="shadow" alt="">
 
                                     <h5 class="mb-0 mt-5"><?= $value['nama']; ?></h5>
                                     <p class="mb-3"><?= $value['kelas']; ?></p>
@@ -114,7 +114,7 @@ if ($timestampAkhir < now()) {
                         <div class="p-4 border radius-15">
                             <h6 class="mb-0 text-uppercase">Golput</h6>
                             <hr>
-                            <img src="<?php echo base_url(); ?>/assets/images/avatars/avatar-1.png" width="110" height="110" class="shadow" alt="">
+                            <img src="<?php echo base_url(); ?>/assets/images/calonosis/<?= $value['foto_id']; ?>" width="110" height="110" class="shadow" alt="">
 
                             <h5 class="mb-0 mt-5">Tidak ada</h5>
                             <p class="mb-3">Tidak ada</p>
@@ -149,7 +149,7 @@ if ($timestampAkhir < now()) {
                                 <div class="p-4 border radius-15">
                                     <h6 class="mb-0 text-uppercase">Paslon Nomor <?= $value['nomor_id']; ?></h6>
                                     <hr>
-                                    <img src="<?php echo base_url(); ?>/assets/images/avatars/avatar-1.png" width="110" height="110" class="shadow" alt="">
+                                    <img src="<?php echo base_url(); ?>/assets/images/calonosis/<?= $value['foto_id']; ?>" width="110" height="110" class="shadow" alt="">
 
                                     <h5 class="mb-0 mt-5"><?= $value['nama']; ?></h5>
                                     <p class="mb-3"><?= $value['kelas']; ?></p>
@@ -185,7 +185,7 @@ if ($timestampAkhir < now()) {
                                 <div class="p-4 border radius-15">
                                     <h6 class="mb-0 text-uppercase">Paslon Nomor <?= $value['nomor_id']; ?></h6>
                                     <hr>
-                                    <img src="<?php echo base_url(); ?>/assets/images/avatars/avatar-1.png" width="110" height="110" class="shadow" alt="">
+                                    <img src="<?php echo base_url(); ?>/assets/images/calonosis/<?= $value['foto_id']; ?>" width="110" height="110" class="shadow" alt="">
 
                                     <h5 class="mb-0 mt-5"><?= $value['nama']; ?></h5>
                                     <p class="mb-3"><?= $value['kelas']; ?></p>

@@ -23,7 +23,6 @@ $routes->setTranslateURIDashes(false);
 $routes->set404Override();
 $routes->setAutoRoute(true);
 
-$routes->get('login', 'Auth\Login::index');
 /*
  * --------------------------------------------------------------------
  * Route Definitions
