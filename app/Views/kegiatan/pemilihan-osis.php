@@ -88,8 +88,12 @@ if ($timestampAkhir < now()) {
                                 <img src="<?php echo base_url(); ?>/assets/images/calonosis/<?= $value['foto_id']; ?>" width="110" height="110" class="shadow" alt="">
                                 <h5 class="mb-0 mt-5"><?= $value['nama']; ?></h5>
                                 <p class="mb-3"><?= $value['kelas']; ?></p>
-                                <h5 class="mb-0 mt-5">Dengan <?= $Tertinggi[0]['Total']; ?> Suara</h5>
-
+                                <hr>
+                                <h5 class="mb-0 ">Dengan <?= $Tertinggi[0]['Total']; ?> Suara</h5>
+                                <hr>
+                                <div class="d-grid gap-2">
+                                    <a href="#" class="btn btn-secondary radius-1" id="btn" data-bs-toggle="modal" data-bs-target="#VerticallycenteredModal<?= $value['nomor_id']; ?>">Visi dan Misi</a>
+                                </div>
                             </div>
                         </div>
                     </div>
