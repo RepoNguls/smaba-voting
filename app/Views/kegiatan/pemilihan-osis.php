@@ -36,8 +36,8 @@ $timestampAkhir = strtotime($dataKegiatan['date_end']);
         var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
         // Display the result in the element with id="demo"
-        document.getElementById("sampaiDengan").innerHTML = days + "Hari " + hours + "Jam " +
-            minutes + "Menit " + seconds + "Detik ";
+        document.getElementById("sampaiDengan").innerHTML = "<b>" + days + "</b>hari <b>" + hours + "</b>jam <b>" +
+            minutes + "</b>menit <b>" + seconds + "</b>detik ";
 
         // If the count down is finished, write some text
         if (distance < 0) {
@@ -162,9 +162,16 @@ if ($timestampAkhir < now()) {
                 foreach ($pilihanUser as $value) { ?>
                     <div class="col"></div>
                     <div class="col">
-                        <h6 class="mb-0 text-uppercase" style="text-align: center;">Kegiatan Berakhir pada</h6>
-                        <br>
-                        <h6 id="sampaiDengan" class="mb-0 text-uppercase" style="text-align: center;"></h6>
+                        <div class="alert border-0 border-start border-2 border-primary">
+                            <div class="d-flex align-items-center">
+                                <div class="font-35"><i class="bx bx-bell"></i>
+                                </div>
+                                <div class="ms-3">
+                                    <h6 class="mb-0 text-primary">Kegiatan Berakhir pada</h6>
+                                    <div id="sampaiDengan"></div>
+                                </div>
+                            </div>
+                        </div>
                         <hr>
 
                         <div class="card radius-15">
@@ -212,9 +219,16 @@ if ($timestampAkhir < now()) {
     } else {
     ?>
         <div class="card-body">
-            <h6 class="mb-0 text-uppercase" style="text-align: center;">Kegiatan Berakhir pada</h6>
-            <br>
-            <h6 id="sampaiDengan" class="mb-0 text-uppercase" style="text-align: center;"></h6>
+            <div class="alert border-0 border-start border-2 border-primary">
+                <div class="d-flex align-items-center">
+                    <div class="font-35"><i class="bx bx-bell"></i>
+                    </div>
+                    <div class="ms-3">
+                        <h6 class="mb-0 text-primary">Kegiatan Berakhir pada</h6>
+                        <div id="sampaiDengan"></div>
+                    </div>
+                </div>
+            </div>
             <hr>
             <div class="row row-cols-1 row-cols-lg-2 row-cols-xl-2">
                 <?php
