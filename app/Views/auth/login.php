@@ -41,6 +41,23 @@
                                     <div class="login-separater text-center mb-4"> <span>LOGIN MENGGUNAKAN NIS</span>
                                         <hr />
                                     </div>
+                                    <?php
+                                    $errors = session()->getFlashdata('login_error');
+                                    if (!empty($errors)) { ?>
+                                        <div class="alert alert-danger border-0 bg-danger alert-dismissible fade show py-2">
+                                            <div class="d-flex align-items-center">
+                                                <div class="font-35 text-white"><i class="bx bxs-message-square-x"></i>
+                                                </div>
+                                                <div class="ms-3">
+                                                    <h6 class="mb-0 text-white">Info</h6>
+                                                    <div class="text-white">Username atau Password Salah</div>
+                                                </div>
+                                            </div>
+                                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                        </div>
+                                    <?php
+                                    }
+                                    ?>
                                     <div class="form-body">
                                         <?php echo form_open(base_url() . '/login', 'class="row g-3" '); ?>
                                         <div class="col-12">
