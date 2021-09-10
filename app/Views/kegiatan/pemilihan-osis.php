@@ -343,40 +343,41 @@ if ($timestampAkhir < now()) {
                 });
             }
         </script>
+        <?php if ($timestampAkhir < now()) { ?>
+            <script>
+                $(function() {
+                    "use strict";
+                    new Chart(document.getElementById("chart3"), {
+                        type: 'pie',
+                        data: {
+                            labels: [<?php
 
-        <script>
-            $(function() {
-                "use strict";
-                new Chart(document.getElementById("chart3"), {
-                    type: 'pie',
-                    data: {
-                        labels: [<?php
-
-                                    foreach ($hasilPemilihan as $hasil) {
-                                        $namaCalon =  $this->calonOsis->getByIDArray($hasil['pilihan_id']);
-                                        $nama = $namaCalon['nama'];
-                                        echo  "'$nama'" . ", ";
-                                    }
-                                    ?>],
-                        datasets: [{
-                            label: "Nama Calon",
-                            backgroundColor: ["#0d6efd", "#212529", "#17a00e", "#f41127", "#ffc107"],
-                            data: [<?php
-                                    foreach ($hasilPemilihan as $hasil) {
-                                        echo $hasil["Total"] . ",";
-                                    }
-                                    ?>]
-                        }]
-                    },
-                    options: {
-                        maintainAspectRatio: false,
-                        title: {
-                            display: true,
-                            text: 'Hasil Pemilihan Calon Ketua OSIS'
+                                        foreach ($hasilPemilihan as $hasil) {
+                                            $namaCalon =  $this->calonOsis->getByIDArray($hasil['pilihan_id']);
+                                            $nama = $namaCalon['nama'];
+                                            echo  "'$nama'" . ", ";
+                                        }
+                                        ?>],
+                            datasets: [{
+                                label: "Nama Calon",
+                                backgroundColor: ["#0d6efd", "#212529", "#17a00e", "#f41127", "#ffc107"],
+                                data: [<?php
+                                        foreach ($hasilPemilihan as $hasil) {
+                                            echo $hasil["Total"] . ",";
+                                        }
+                                        ?>]
+                            }]
+                        },
+                        options: {
+                            maintainAspectRatio: false,
+                            title: {
+                                display: true,
+                                text: 'Hasil Pemilihan Calon Ketua OSIS'
+                            }
                         }
-                    }
-                });
+                    });
 
-            });
-        </script>
+                });
+            </script>
+        <?php } ?>
         <!--end row-->
