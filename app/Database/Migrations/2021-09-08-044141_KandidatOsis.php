@@ -14,6 +14,7 @@ class KandidatOsis extends Migration
 			'nama'  => ['type' => 'varchar', 'constraint' => 70,],
 			'kelas'  => ['type' => 'varchar', 'constraint' => 70,],
 			'foto_id'  => ['type' => 'varchar', 'constraint' => 70,],
+			'visi_misi'  => ['type' => 'text'],
 			'updated_at' => [
 				'type'           => 'datetime',
 			],
