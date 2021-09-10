@@ -23,6 +23,7 @@ class PemilihanOsis extends KegiatanController
             $data['calon'] = $this->calonOsis->getAllKandidat();
             $data['uri'] =  base_url() . "/" . $this->request->uri->getSegment(1) . "/";
             $data['hasilPemilihan'] = $this->pemilihanOsis->hasilPemilihan();
+
             //dd($data['hasilPemilihan']);
             if ($this->user_name['kegiatan']) {
                 $pilihan = $this->pemilihanOsis->getPilihan($this->user_name['username']);

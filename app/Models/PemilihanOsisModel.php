@@ -67,4 +67,10 @@ class PemilihanOsisModel extends Model
 		$builder = $this->db->query('SELECT *, COUNT(pilihan_id) AS Total FROM pemilihan_osis GROUP BY `pilihan_id`');
 		return $builder->getResultArray();
 	}
+
+	public function hasilPemilihanTertinggi()
+	{
+		$builder = $this->db->query('SELECT *, COUNT(pilihan_id) AS Total FROM pemilihan_osis GROUP BY `pilihan_id` ORDER BY COUNT(pilihan_id) DESC LIMIT 1');
+		return $builder->getResultArray();
+	}
 }
