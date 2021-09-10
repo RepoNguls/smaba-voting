@@ -43,8 +43,8 @@ $timestampAkhir = strtotime($dataKegiatan['date_end']);
             if (distance < 0) {
                 window.location.reload();
             }
+        <?php } ?>
     }, 1000);
-    <?php } ?>
 </script>
 <h6 class="mb-0 text-uppercase">Pemilihan Ketua Osis</h6>
 <hr>
