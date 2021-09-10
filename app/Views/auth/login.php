@@ -19,7 +19,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <link href="<?php echo base_url(); ?>/assets/css/app.css" rel="stylesheet">
     <link href="<?php echo base_url(); ?>/assets/css/icons.css" rel="stylesheet">
-    <title>Rocker - Bootstrap 5 Admin Dashboard Template</title>
+    <title>SMABA Login</title>
 </head>
 
 <body class="bg-login">
@@ -101,7 +101,6 @@
     <script src="<?php echo base_url(); ?>/assets/js/jquery.min.js"></script>
     <script src="<?php echo base_url(); ?>/assets/plugins/simplebar/js/simplebar.min.js"></script>
     <script src="<?php echo base_url(); ?>/assets/plugins/metismenu/js/metisMenu.min.js"></script>
-    <script src="<?php echo base_url(); ?>/assets/plugins/perfect-scrollbar/js/perfect-scrollbar.js"></script>
     <!--Password show & hide js -->
     <script>
         $(document).ready(function() {
