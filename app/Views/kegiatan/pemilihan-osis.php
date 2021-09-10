@@ -313,36 +313,39 @@ if ($timestampAkhir < now()) {
             </div>
         </div>
         </div>
+        <?php if ($timestampAkhir > now()) { ?>
 
-        <script>
-            function saveAsNewName(el) {
-                var values = {
-                    'pilihan': el
-                };
-                $.ajax({
-                    url: "<?= $uri; ?>kegiatan/pemilihan-osis/pilih",
-                    type: "POST",
-                    data: values,
-                }).done(function(result) {
-                    window.location.reload();
-                });
-            }
-        </script>
+            <script>
+                function saveAsNewName(el) {
+                    var values = {
+                        'pilihan': el
+                    };
+                    $.ajax({
+                        url: "<?= $uri; ?>kegiatan/pemilihan-osis/pilih",
+                        type: "POST",
+                        data: values,
+                    }).done(function(result) {
+                        window.location.reload();
+                    });
+                }
+            </script>
 
-        <script>
-            function ganti(el) {
-                var values = {
-                    'pilihan': el
-                };
-                $.ajax({
-                    url: "<?= $uri; ?>kegiatan/pemilihan-osis/ganti",
-                    type: "POST",
-                    data: values,
-                }).done(function(result) {
-                    window.location.reload();
-                });
-            }
-        </script>
+            <script>
+                function ganti(el) {
+                    var values = {
+                        'pilihan': el
+                    };
+                    $.ajax({
+                        url: "<?= $uri; ?>kegiatan/pemilihan-osis/ganti",
+                        type: "POST",
+                        data: values,
+                    }).done(function(result) {
+                        window.location.reload();
+                    });
+                }
+            </script>
+        <?php } ?>
+
         <?php if ($timestampAkhir < now()) { ?>
             <script>
                 $(function() {
