@@ -21,12 +21,13 @@ class PemilihanOsis extends KegiatanController
             $data['user'] = $this->user_name;
             $data['URL'] = $namaKegiatan;
             $data['calon'] = $this->calonOsis->getAllKandidat();
-            $pilihan = $this->pemilihanOsis->getPilihan($this->user_name['username']);
-
-
-            if ($this->user_name['kegiatan'])
+            $data['uri'] =  base_url() . "/" . $this->request->uri->getSegment(1) . "/";
+            $data['hasilPemilihan'] = $this->pemilihanOsis->hasilPemilihan();
+            //dd($data['hasilPemilihan']);
+            if ($this->user_name['kegiatan']) {
+                $pilihan = $this->pemilihanOsis->getPilihan($this->user_name['username']);
                 $data['pilihan'] = $this->calonOsis->getByID($pilihan['pilihan_id']);
-
+            }
 
             //$data['jadwal'] = $this->jadwal;
             return view('template/index', $data);

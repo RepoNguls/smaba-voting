@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use CodeIgniter\Model;
+use SebastianBergmann\CodeCoverage\Report\Xml\Totals;
 
 class PemilihanOsisModel extends Model
 {
@@ -59,5 +60,11 @@ class PemilihanOsisModel extends Model
 	public function getPilihan($id)
 	{
 		return $this->where(['username' => $id])->first();
+	}
+
+	public function hasilPemilihan()
+	{
+		$builder = $this->db->query('SELECT *, COUNT(pilihan_id) AS Total FROM pemilihan_osis GROUP BY `pilihan_id`');
+		return $builder->getResultArray();
 	}
 }

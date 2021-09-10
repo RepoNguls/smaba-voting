@@ -29,6 +29,7 @@ class Auth extends Model
 		if ($this->countAllResults() == 0) {
 			return false;
 		} else {
+			$this->where('username', $data['username']);
 			$query = $this->get();
 			//Bandingkan Input Password dengan yang ada di database
 			$result = $query->getRowArray();

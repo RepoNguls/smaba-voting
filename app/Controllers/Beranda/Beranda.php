@@ -10,6 +10,8 @@ class Beranda extends BerandaController
         $data['view'] = 'beranda/home';
         $data['user'] = $this->user_name;
         $data['URL'] = 'beranda';
+        $data['uri'] =  base_url() . "/" . $this->request->uri->getSegment(1) . "/";
+
         //$data['jadwal'] = $this->jadwal;
         return view('template/index', $data);
     }

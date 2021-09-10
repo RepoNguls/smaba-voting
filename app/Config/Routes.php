@@ -43,12 +43,13 @@ $routes->get('/dashboard', 'Dashboard::index');
 $routes->group('user', ['filter' => 'auth_user'], function ($routes) {
 	$routes->get('/', 'Beranda\Beranda::index');
 	$routes->post('simpan', 'Beranda\Beranda::simpan');
+
+	$routes->get('kegiatan/pemilihan-osis', 'Kegiatan\PemilihanOsis::index');
+	$routes->post('kegiatan/pemilihan-osis/pilih', 'Kegiatan\PemilihanOsis::pilih');
+	$routes->post('kegiatan/pemilihan-osis/ganti', 'Kegiatan\PemilihanOsis::ganti');
 });
 
 $routes->group('kegiatan', ['filter' => 'auth_user'], function ($routes) {
-	$routes->get('pemilihan-osis', 'Kegiatan\PemilihanOsis::index');
-	$routes->post('pemilihan-osis/pilih', 'Kegiatan\PemilihanOsis::pilih');
-	$routes->post('pemilihan-osis/ganti', 'Kegiatan\PemilihanOsis::ganti');
 });
 /*
  * --------------------------------------------------------------------

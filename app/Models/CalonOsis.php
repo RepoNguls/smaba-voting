@@ -49,4 +49,17 @@ class CalonOsis extends Model
 	{
 		return $this->where('nomor_id', $id)->findAll();
 	}
+
+	public function countTotalCalon()
+	{
+		return $this->countAllResults();
+	}
+
+	public function getByIDArray($id)
+	{
+		$this->where('nomor_id', $id);
+		$query = $this->get();
+		//Bandingkan Input Password dengan yang ada di database
+		return $query->getRowArray();
+	}
 }

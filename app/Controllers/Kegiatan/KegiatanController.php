@@ -42,7 +42,8 @@ class KegiatanController extends Controller
 		$this->KegiatanModel =  new KegiatanModel();
 		$this->calonOsis =  new CalonOsis();
 		$this->pemilihanOsis = new PemilihanOsisModel();
-
+		$this->request = \Config\Services::request();
+		$this->request->uri->setSilent();
 		// Do Not Edit This Line
 		parent::initController($request, $response, $logger);
 

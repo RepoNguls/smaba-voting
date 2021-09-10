@@ -48,7 +48,8 @@ class BerandaController extends Controller
         $this->user_id = $session->get('username');
 
         $this->user_name = $this->UserModel->get_user($this->user_id); // Get Login User ID
-
+        $this->request = \Config\Services::request();
+        $this->request->uri->setSilent();
         //--------------------------------------------------------------------
         // Preload any models, libraries, etc, here.
         //--------------------------------------------------------------------

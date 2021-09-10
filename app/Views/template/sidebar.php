@@ -28,20 +28,12 @@
                 <?php
                 $list = $kegiatan;
                 foreach ($list as $value) { ?>
-                    <li> <a href="<?php echo base_url(); ?>/kegiatan/<?= $value['link']; ?>"><i class="bx bx-right-arrow-alt"></i><?= $value['keterangan']; ?></a>
+                    <li> <a href="<?= $uri; ?>kegiatan/<?= $value['link']; ?>"><i class="bx bx-right-arrow-alt"></i><?= $value['keterangan']; ?></a>
                     </li>
                 <?php
                 }
                 ?>
             </ul>
-        </li>
-        <li class="menu-label">UI Elements</li>
-        <li>
-            <a href="widgets.html">
-                <div class="parent-icon"><i class='bx bx-cookie'></i>
-                </div>
-                <div class="menu-title">Widgets</div>
-            </a>
         </li>
     </ul>
     <!--end navigation-->
