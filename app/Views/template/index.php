@@ -83,7 +83,7 @@
     <script src="<?php echo base_url(); ?>/assets/plugins/vectormap/jquery-jvectormap-world-mill-en.js"></script>
     <script src="<?php echo base_url(); ?>/assets/plugins/chartjs/js/Chart.min.js"></script>
     <script src="<?php echo base_url(); ?>/assets/plugins/chartjs/js/Chart.extension.js"></script>
-    <script src="<?php echo base_url(); ?>/assets/js/index.js"></script>
+    <!--<script src="<?php echo base_url(); ?>/assets/js/index.js"></script>-->
 
     <!--app JS-->
     <script src="<?php echo base_url(); ?>/assets/js/app.js"></script>
