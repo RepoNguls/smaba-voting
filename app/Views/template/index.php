@@ -25,7 +25,7 @@
     <link rel="<?php echo base_url(); ?>/stylesheet" href="assets/css/semi-dark.css" />
     <link rel="<?php echo base_url(); ?>/stylesheet" href="assets/css/header-colors.css" />
     <link rel="<?php echo base_url(); ?>/stylesheet" href="assets/css/custom.css" />
-    <title>Rocker - Bootstrap 5 Admin Dashboard Template</title>
+    <title>Voting SMAN 1 Barambai</title>
     <script src="<?php echo base_url(); ?>/assets/js/jquery.min.js"></script>
 
 </head>
