@@ -95,6 +95,20 @@ if ($timestampAkhir < now()) {
                                     <a href="#" class="btn btn-secondary radius-1" id="btn" data-bs-toggle="modal" data-bs-target="#VerticallycenteredModal<?= $value['nomor_id']; ?>">Visi dan Misi</a>
                                 </div>
                             </div>
+                            <div class="modal fade" id="VerticallycenteredModal<?= $value['nomor_id']; ?>" tabindex="-1" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">Visi Misi Pasangan Nomor <?= $value['nomor_id']; ?></h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body"><?= $value['visi_misi']; ?></div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
