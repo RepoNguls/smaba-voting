@@ -12,7 +12,7 @@ class Login extends AuthController
         if ($session->has('is_siswa_login')) {
             return redirect()->to(base_url('/user'));
         } else {
-            return view('auth\login');
+            return view('auth/login');
         }
     }
 
