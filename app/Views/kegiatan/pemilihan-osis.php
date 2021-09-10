@@ -18,7 +18,6 @@ $timestampAkhir = strtotime($dataKegiatan['date_end']);
     <?php
     } else { ?>
         var countDownDate = new Date("<?= $dataKegiatan['date_end']; ?>").getTime();
-
     <?php } ?>
     // Update the count down every 1 second
     var x = setInterval(function() {
@@ -35,15 +34,17 @@ $timestampAkhir = strtotime($dataKegiatan['date_end']);
         var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
         var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-        // Display the result in the element with id="demo"
-        document.getElementById("sampaiDengan").innerHTML = "<b>" + days + "</b>hari <b>" + hours + "</b>jam <b>" +
-            minutes + "</b>menit <b>" + seconds + "</b>detik ";
+        <?php if ($timestampAkhir > now()) { ?>
+            // Display the result in the element with id="demo"
+            document.getElementById("sampaiDengan").innerHTML = "<b>" + days + "</b>hari <b>" + hours + "</b>jam <b>" +
+                minutes + "</b>menit <b>" + seconds + "</b>detik ";
 
-        // If the count down is finished, write some text
-        if (distance < 0) {
-            window.location.reload();
-        }
+            // If the count down is finished, write some text
+            if (distance < 0) {
+                window.location.reload();
+            }
     }, 1000);
+    <?php } ?>
 </script>
 <h6 class="mb-0 text-uppercase">Pemilihan Ketua Osis</h6>
 <hr>
