@@ -134,8 +134,26 @@ if ($timestampAkhir < now()) {
                                 <img src="<?php echo base_url(); ?>/assets/images/calonosis/<?= $value['foto_id']; ?>" width="110" height="110" class="shadow" alt="">
                                 <h5 class="mb-0 mt-5"><?= $value['nama']; ?></h5>
                                 <p class="mb-3"><?= $value['kelas']; ?></p>
-                                <h5 class="mb-0 mt-5">Dengan <?= $Tertinggi[0]['Total']; ?> Suara</h5>
-
+                                <hr>
+                                <h5 class="mb-0 ">Dengan <?= $Tertinggi[0]['Total']; ?> Suara</h5>
+                                <hr>
+                                <div class="d-grid gap-2">
+                                    <a href="#" class="btn btn-secondary radius-1" id="btn" data-bs-toggle="modal" data-bs-target="#VerticallycenteredModal<?= $value['nomor_id']; ?>">Visi dan Misi</a>
+                                </div>
+                            </div>
+                            <div class="modal fade" id="VerticallycenteredModal<?= $value['nomor_id']; ?>" tabindex="-1" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">Visi Misi Pasangan Nomor <?= $value['nomor_id']; ?></h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body"><?= $value['visi_misi']; ?></div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
