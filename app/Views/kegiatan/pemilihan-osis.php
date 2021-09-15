@@ -75,7 +75,7 @@ $timestampAkhir = strtotime($dataKegiatan['date_end']);
     <div class="card-body">
         <h6 class="mb-0 text-uppercase">Pemilihan Ketua Osis Periode 2021/2022</h6>
         <hr>
-        Silahkan pilih calon kandidat ketua dan wakil ketua OSIS SMAN 1 Barambai tahun pelajaran 2021/2022
+        Silahkan pilih calon ketua dan wakil ketua OSIS SMAN 1 Barambai tahun pelajaran 2021/2022
     </div>
 </div>
 <?php
