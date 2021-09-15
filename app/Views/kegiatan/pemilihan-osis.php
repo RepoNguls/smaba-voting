@@ -46,6 +46,29 @@ $timestampAkhir = strtotime($dataKegiatan['date_end']);
         <?php } ?>
     }, 1000);
 </script>
+
+<style>
+    .containersss {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        padding-top: 56.25%;
+        /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+    }
+
+    /* Then style the iframe to fit in the containersss div with full height and width */
+    .responsive-iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+    }
+</style>
+
+
 <h6 class="mb-0 text-uppercase">Pemilihan Ketua Osis</h6>
 <hr>
 <div class="card">
@@ -86,7 +109,7 @@ if ($timestampAkhir < now()) {
                             <div class="p-4 border radius-15">
                                 <h6 class="mb-0 text-uppercase">Paslon Nomor <?= $value['nomor_id']; ?></h6>
                                 <hr>
-                                <img src="<?php echo base_url(); ?>/assets/images/calonosis/<?= $value['foto_id']; ?>" width="110" height="110" class="shadow" alt="">
+                                <img src="<?php echo base_url(); ?>/assets/images/calonosis/<?= $value['foto_id']; ?>" width="200" height="110" class="shadow" alt="">
                                 <h5 class="mb-0 mt-5"><?= $value['nama']; ?></h5>
                                 <p class="mb-3"><?= $value['kelas']; ?></p>
                                 <hr>
@@ -150,7 +173,7 @@ if ($timestampAkhir < now()) {
                             <div class="p-4 border radius-15">
                                 <h6 class="mb-0 text-uppercase">Paslon Nomor <?= $value['nomor_id']; ?></h6>
                                 <hr>
-                                <img src="<?php echo base_url(); ?>/assets/images/calonosis/<?= $value['foto_id']; ?>" width="110" height="110" class="shadow" alt="">
+                                <img src="<?php echo base_url(); ?>/assets/images/calonosis/<?= $value['foto_id']; ?>" width="200" height="110" class="shadow" alt="">
                                 <h5 class="mb-0 mt-5"><?= $value['nama']; ?></h5>
                                 <p class="mb-3"><?= $value['kelas']; ?></p>
                                 <hr>
@@ -218,7 +241,7 @@ if ($timestampAkhir < now()) {
                                 <div class="p-4 border radius-15">
                                     <h6 class="mb-0 text-uppercase">Paslon Nomor <?= $value['nomor_id']; ?></h6>
                                     <hr>
-                                    <img src="<?php echo base_url(); ?>/assets/images/calonosis/<?= $value['foto_id']; ?>" width="110" height="110" class="shadow" alt="">
+                                    <img src="<?php echo base_url(); ?>/assets/images/calonosis/<?= $value['foto_id']; ?>" width="200" height="110" class="shadow" alt="">
 
                                     <h5 class="mb-0 mt-5"><?= $value['nama']; ?></h5>
                                     <p class="mb-3"><?= $value['kelas']; ?></p>
@@ -277,7 +300,7 @@ if ($timestampAkhir < now()) {
                                 <div class="p-4 border radius-15">
                                     <h6 class="mb-0 text-uppercase">Paslon Nomor <?= $value['nomor_id']; ?></h6>
                                     <hr>
-                                    <img src="<?php echo base_url(); ?>/assets/images/calonosis/<?= $value['foto_id']; ?>" width="110" height="110" class="shadow" alt="">
+                                    <img src="<?php echo base_url(); ?>/assets/images/calonosis/<?= $value['foto_id']; ?>" width="200" height="110" class="shadow" alt="">
 
                                     <h5 class="mb-0 mt-5"><?= $value['nama']; ?></h5>
                                     <p class="mb-3"><?= $value['kelas']; ?></p>
@@ -383,4 +406,11 @@ if ($timestampAkhir < now()) {
                 });
             </script>
         <?php } ?>
+
+        <script>
+            $('.modal').on('hide.bs.modal', function() {
+                var memory = $(this).html();
+                $(this).html(memory);
+            })
+        </script>
         <!--end row-->
