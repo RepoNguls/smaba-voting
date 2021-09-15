@@ -380,7 +380,7 @@ if ($timestampAkhir < now()) {
 
                                         foreach ($hasilPemilihan as $hasil) {
                                             $namaCalon =  $this->calonOsis->getByIDArray($hasil['pilihan_id']);
-                                            $nama = $namaCalon['nama'];
+                                            $nama = "Paslon 0" . $namaCalon['nomor_id'];
                                             echo  "'$nama'" . ", ";
                                         }
                                         ?>],
